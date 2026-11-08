@@ -1,4 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
-bash "$(dirname "$0")/download_data.sh"
+cd "$(dirname "$0")/.."
+bash scripts/download_data.sh
+poetry run python -m src.train
+poetry run jupyter nbconvert --execute --to notebook \
+    --output-dir=outputs \
+    notebooks/EDA.ipynb notebooks/baseline_review.ipynb

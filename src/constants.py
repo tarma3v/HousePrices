@@ -10,3 +10,4 @@ ID_COL = "Id"
 TARGET = "SalePrice"
 HOLDOUT_SHARE = 0.15
 HOLDOUT_SEED = 42
+
